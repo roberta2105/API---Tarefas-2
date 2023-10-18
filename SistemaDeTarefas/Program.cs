@@ -24,9 +24,9 @@ namespace SistemaDeTarefas
             builder.Services.AddDbContext<SistemasDeTarefasDBContext>(options =>
             options.UseNpgsql(connectionString), ServiceLifetime.Transient, ServiceLifetime.Transient);
 
-            //InjeÃ§Ã£o de dependÃªncia
+            //Injeção de dependência
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-
+            builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 
             var app = builder.Build();
 
